@@ -902,9 +902,9 @@ void attributliste_sichern(void) {
 
 void attributliste_erweitern(void) {
   string s;
-  dlgDialog("Attributliste edit") {
+  dlgDialog("Edit Attribute list") {
     dlgHBoxLayout {
-      dlgLabel("Hinzufügen ");
+      dlgLabel("Add ");
       dlgStringEdit(s);
     }
     dlgHBoxLayout {
@@ -961,9 +961,9 @@ void aus_liste_anlegen(string devname) {
     dlgLabel(attribute_list_datei);
     dlgListView("Attr. Name", attribute_liste, sel) attribute_liste[sel] = strupr(attributliste_edit(attribute_liste[sel]));
     // cntattributelist
-    dlgLabel("Listenotrag");
+    dlgLabel("Commands");
     dlgHBoxLayout {
-      dlgPushButton("Expand") attributliste_erweitern();
+      dlgPushButton("Add") attributliste_erweitern();
       dlgPushButton("Clear") attributliste_delete(sel);
       dlgPushButton("Backup") attributliste_sichern();
       dlgStretch(1);
